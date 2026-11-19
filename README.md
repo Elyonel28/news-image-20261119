@@ -4,17 +4,10 @@
 
 # World news, 19 November 2026, in one image
 
-A newspaper-style infographic summing up Thursday 19 November 2026: the first-ever
-three-way summit of Trump, Xi and Putin in Shenzhen; Anthropic's record $81.3B IPO;
-Israel's rare ground operation in Gaza; the UN court's verdict on Myanmar; the global
-rollout of GTA VI; Voyager 1 reaching one light-day; and the EU's €45B loan plan for
-Ukraine — plus a short "Also" strip.
+A newspaper-style infographic summing up Thursday 19 November 2026: the first-ever Trump–Xi–Putin three-way summit in Shenzhen, Anthropic's record $81.3B IPO, Israeli tanks crossing the Gaza ceasefire line, the UN court's Myanmar genocide verdict, GTA VI's worldwide launch, Voyager 1 reaching one light-day, and the EU's €45B loan for Ukraine.
 
-The image (`entry.png`, 1024×1024) is drawn with Python/PIL by `build_image.py`
-(no AI image generation, so every word is spelled correctly), and `main.py`
-copies it to the grader's output directory.
+`main.py` copies `entry.png` to `/output/entry.png`. `build_image.py` draws the image with Python/PIL (no AI image generation). Run `python3 build_image.py` to regenerate `entry.png`.
 
-Built for the make.fun bounty
-[Sum up 19 November's world news in one image](https://make.fun/bounty/news-image-20261119).
+Built for the make.fun bounty: https://make.fun/bounty/news-image-20261119
 
-Join make.fun with my referral link: https://make.fun/r/h0sbywyp
+Try make.fun yourself: https://make.fun/r/h0sbywyp

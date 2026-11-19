@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
-"""news-image-20261119 entrypoint (Python 3.13, standard library only).
+"""Copy the entry image to the output directory.
 
-The entry is a single image, entry.png, drawn in this repository
-(see README.md for how it was made). This program copies it to the
-grader's output directory as entry.png. It uses no network and is
-deterministic: every run writes the same bytes.
-
-Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
-    mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+entry.png is the world-news infographic for 19 November 2026. The program
+runs with no network. It copies the repository's entry.png to
+/output/entry.png, creating /output when needed.
 """
 
 import os
 import shutil
-from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
-OUT = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, "entry.png")
+DST = "/output/entry.png"
 
-OUT.mkdir(parents=True, exist_ok=True)
-shutil.copyfile(HERE / "entry.png", OUT / "entry.png")
+
+def main():
+    os.makedirs(os.path.dirname(DST), exist_ok=True)
+    # The output must be byte-identical to entry.png.
+    shutil.copyfile(SRC, DST)
+    print(f"wrote {DST}")
+
+
+if __name__ == "__main__":
+    main()
